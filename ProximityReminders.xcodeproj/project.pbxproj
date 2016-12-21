@@ -17,6 +17,7 @@
 		85FC2F291E09E5F1009C88B8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2F251E09E5F1009C88B8 /* Task.swift */; };
 		85FC2F2A1E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2F261E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift */; };
 		85FC2F2B1E09E5F1009C88B8 /* CircularNotificationRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2F271E09E5F1009C88B8 /* CircularNotificationRegion.swift */; };
+		85FC71F61E0B3014001C37D6 /* TaskFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC71F51E0B3014001C37D6 /* TaskFetchedResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		85FC2F251E09E5F1009C88B8 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../Task.swift; sourceTree = "<group>"; };
 		85FC2F261E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CircularNotificationRegion+CoreDataProperties.swift"; path = "../CircularNotificationRegion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		85FC2F271E09E5F1009C88B8 /* CircularNotificationRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularNotificationRegion.swift; path = ../CircularNotificationRegion.swift; sourceTree = "<group>"; };
+		85FC71F51E0B3014001C37D6 /* TaskFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFetchedResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				85141F721E0B085F00DB3920 /* TaskListController.swift */,
+				85FC71F51E0B3014001C37D6 /* TaskFetchedResultsController.swift */,
 				85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */,
 			);
 			name = Controller;
@@ -175,6 +178,7 @@
 			files = (
 				85FC2EE61E09A376009C88B8 /* ProximityReminders.xcdatamodeld in Sources */,
 				85141F731E0B085F00DB3920 /* TaskListController.swift in Sources */,
+				85FC71F61E0B3014001C37D6 /* TaskFetchedResultsController.swift in Sources */,
 				85FC2F131E09E0AF009C88B8 /* CoreDataController.swift in Sources */,
 				85FC2F281E09E5F1009C88B8 /* Task+CoreDataProperties.swift in Sources */,
 				85FC2F2A1E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift in Sources */,
