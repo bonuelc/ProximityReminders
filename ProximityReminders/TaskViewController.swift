@@ -22,4 +22,13 @@ class TaskViewController: UITableViewController {
         
         return textField
     }()
+    
+    lazy var segmentedControl: UISegmentedControl = {
+        
+        let segmentedControl = UISegmentedControl(items: ["None", "When I Enter", "When I Exit"])
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        return segmentedControl
+    }()
 }
