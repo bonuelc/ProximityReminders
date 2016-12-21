@@ -10,4 +10,8 @@ import UIKit
 import CoreData
 
 class TaskFetchedResultsController: NSFetchedResultsController {
+    
+    // MARK: - Properties 
+    
+    var tableView: UITableView?
 }
