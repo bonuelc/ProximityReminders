@@ -43,6 +43,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85141F6E1E0B07AA00DB3920 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85FC2EE41E09A376009C88B8 /* ProximityReminders.xcdatamodeld */,
+				85FC2F251E09E5F1009C88B8 /* Task.swift */,
+				85FC2F241E09E5F1009C88B8 /* Task+CoreDataProperties.swift */,
+				85FC2F271E09E5F1009C88B8 /* CircularNotificationRegion.swift */,
+				85FC2F261E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		85FC2ED11E09A376009C88B8 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +74,12 @@
 		85FC2EDC1E09A376009C88B8 /* ProximityReminders */ = {
 			isa = PBXGroup;
 			children = (
-				85FC2F251E09E5F1009C88B8 /* Task.swift */,
-				85FC2F241E09E5F1009C88B8 /* Task+CoreDataProperties.swift */,
-				85FC2F271E09E5F1009C88B8 /* CircularNotificationRegion.swift */,
-				85FC2F261E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift */,
+				85141F6E1E0B07AA00DB3920 /* Model */,
 				85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */,
 				85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */,
 				85FC2EE71E09A376009C88B8 /* Assets.xcassets */,
 				85FC2EE91E09A376009C88B8 /* LaunchScreen.storyboard */,
 				85FC2EEC1E09A376009C88B8 /* Info.plist */,
-				85FC2EE41E09A376009C88B8 /* ProximityReminders.xcdatamodeld */,
 			);
 			path = ProximityReminders;
 			sourceTree = "<group>";
