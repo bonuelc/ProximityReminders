@@ -22,6 +22,17 @@ class TaskFetchedResultsController: NSFetchedResultsController {
         super.init(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         self.delegate = self
+        
+        fetch()
+    }
+    
+    func fetch() {
+        
+        do {
+            try performFetch()
+        } catch let error as NSError {
+            print("Unresolved error \(error), \(error.userInfo)")
+        }
     }
 }
 
