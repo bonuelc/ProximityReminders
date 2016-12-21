@@ -11,5 +11,14 @@ import UIKit
 
 class TaskDataSource: NSObject, UITableViewDataSource {
     
+    // MARK: - Properties
     
+    private let tableView: UITableView
+    
+    init(tableView: UITableView) {
+        
+        self.tableView = tableView
+        
+        super.init()
+    }
 }
