@@ -31,4 +31,61 @@ class TaskViewController: UITableViewController {
         
         return segmentedControl
     }()
+    
+    // MARK: - UITableViewDataSource
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        switch section {
+        case 0:
+            return "Task"
+        case 1:
+            return "Notify (for current location)"
+        default:
+            fatalError("Section not handled")
+        }
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch section {
+        case 0, 1:
+            return 1
+        default:
+            fatalError("Section not handled")
+        }
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell()
+        
+        cell.selectionStyle = .None
+        
+        var view: UIView!
+        
+        switch indexPath.section {
+        case 0:
+            view = textField
+        case 1:
+            view = segmentedControl
+        default:
+            fatalError("Section not handled")
+        }
+        
+        cell.addSubview(view)
+        
+        NSLayoutConstraint.activateConstraints([
+            view.leftAnchor.constraintEqualToAnchor(cell.contentView.leftAnchor),
+            view.topAnchor.constraintEqualToAnchor(cell.contentView.topAnchor),
+            view.rightAnchor.constraintEqualToAnchor(cell.contentView.rightAnchor),
+            view.bottomAnchor.constraintEqualToAnchor(cell.contentView.bottomAnchor),
+        ])
+        
+        return cell
+    }
 }
