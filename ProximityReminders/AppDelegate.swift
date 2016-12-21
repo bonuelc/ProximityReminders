@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         guard let window = window else { return false }
         
-        let masterViewController = UIViewController()
+        let masterViewController = TaskListController(managedObjectContext: CoreDataController().managedObjectContext)
         let masterNavigationControler = UINavigationController(rootViewController: masterViewController)
         
         let splitVC = UISplitViewController()
