@@ -14,4 +14,11 @@ class TaskFetchedResultsController: NSFetchedResultsController {
     // MARK: - Properties 
     
     var tableView: UITableView?
+    
+    init(fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext, tableView: UITableView? = nil) {
+        
+        self.tableView = tableView
+        
+        super.init(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+    }
 }
