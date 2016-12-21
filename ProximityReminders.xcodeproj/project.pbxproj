@@ -11,6 +11,7 @@
 		85FC2EE61E09A376009C88B8 /* ProximityReminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2EE41E09A376009C88B8 /* ProximityReminders.xcdatamodeld */; };
 		85FC2EE81E09A376009C88B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FC2EE71E09A376009C88B8 /* Assets.xcassets */; };
 		85FC2EEB1E09A376009C88B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FC2EE91E09A376009C88B8 /* LaunchScreen.storyboard */; };
+		85FC2F131E09E0AF009C88B8 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		85FC2EE71E09A376009C88B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85FC2EEA1E09A376009C88B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85FC2EEC1E09A376009C88B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */,
+				85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */,
 				85FC2EE71E09A376009C88B8 /* Assets.xcassets */,
 				85FC2EE91E09A376009C88B8 /* LaunchScreen.storyboard */,
 				85FC2EEC1E09A376009C88B8 /* Info.plist */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85FC2EE61E09A376009C88B8 /* ProximityReminders.xcdatamodeld in Sources */,
+				85FC2F131E09E0AF009C88B8 /* CoreDataController.swift in Sources */,
 				85FC2EDE1E09A376009C88B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
