@@ -16,7 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        guard let window = window else { return false }
+        
+        let masterViewController = UIViewController()
+        let masterNavigationControler = UINavigationController(rootViewController: masterViewController)
+        
+        let splitVC = UISplitViewController()
+        splitVC.viewControllers = [masterNavigationControler]
+        
+        window.rootViewController = splitVC
+        window.makeKeyAndVisible()
+        
         return true
     }
 
