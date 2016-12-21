@@ -25,4 +25,28 @@ class TaskDataSource: NSObject, UITableViewDataSource {
         
         super.init()
     }
+    
+    // MARK: - UITableViewDataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let section = fetchedResultsController.sections?[section] else { return 0 }
+        
+        return section.numberOfObjects
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        guard let task = fetchedResultsController.objectAtIndexPath(indexPath) as? Task else { fatalError() }
+        
+        let cell = UITableViewCell()
+        
+        cell.textLabel!.text = task.description
+        
+        return cell
+    }
 }
