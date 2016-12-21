@@ -17,4 +17,8 @@ class Task: NSManagedObject {
     override func awakeFromInsert() {
         dateCreated = NSDate()
     }
+    
+    class func task(inManagedObjectContext moc: NSManagedObjectContext) -> Task {
+        return NSEntityDescription.insertNewObjectForEntityForName(Task.entityName, inManagedObjectContext: moc) as! Task
+    }
 }
