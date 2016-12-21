@@ -10,4 +10,8 @@ import Foundation
 import CoreData
 
 class Task: NSManagedObject {
+    
+    override func awakeFromInsert() {
+        dateCreated = NSDate()
+    }
 }
