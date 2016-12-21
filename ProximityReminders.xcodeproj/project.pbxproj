@@ -55,6 +55,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		85141F701E0B07DB00DB3920 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85FC2EE71E09A376009C88B8 /* Assets.xcassets */,
+				85FC2EE91E09A376009C88B8 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		85FC2ED11E09A376009C88B8 = {
 			isa = PBXGroup;
 			children = (
@@ -75,10 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				85141F6E1E0B07AA00DB3920 /* Model */,
+				85141F701E0B07DB00DB3920 /* View */,
 				85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */,
 				85FC2F121E09E0AF009C88B8 /* CoreDataController.swift */,
-				85FC2EE71E09A376009C88B8 /* Assets.xcassets */,
-				85FC2EE91E09A376009C88B8 /* LaunchScreen.storyboard */,
 				85FC2EEC1E09A376009C88B8 /* Info.plist */,
 			);
 			path = ProximityReminders;
