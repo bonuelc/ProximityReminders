@@ -21,4 +21,11 @@ class Task: NSManagedObject {
     class func task(inManagedObjectContext moc: NSManagedObjectContext) -> Task {
         return NSEntityDescription.insertNewObjectForEntityForName(Task.entityName, inManagedObjectContext: moc) as! Task
     }
+    
+    // TODO: change to 'class' stored property instead of 'static' when supported
+    static let allTasks: NSFetchRequest = {
+        let request = NSFetchRequest(entityName: Task.entityName)
+        request.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]
+        return request
+    }()
 }
