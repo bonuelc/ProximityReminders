@@ -19,6 +19,8 @@ class TaskViewController: UITableViewController {
         
         textField.placeholder = "Enter task here"
         
+        textField.delegate = self
+        
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
@@ -124,6 +126,15 @@ class TaskViewController: UITableViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
+extension TaskViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        updateTaskText()
+    }
+}
+
 // MARK: - Helper Methods
 
 extension TaskViewController {
@@ -138,5 +149,9 @@ extension TaskViewController {
             textField.text = ""
             segmentedControl.selectedSegmentIndex = 0
         }
+    }
+    
+    func updateTaskText() {
+        task?.text = textField.text!
     }
 }
