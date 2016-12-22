@@ -50,3 +50,12 @@ class TaskDataSource: NSObject, UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - Helper Methods
+
+extension TaskDataSource {
+    
+    func taskAtIndexPath(indexPath: NSIndexPath) -> Task {
+        return fetchedResultsController.objectAtIndexPath(indexPath) as! Task
+    }
+}
