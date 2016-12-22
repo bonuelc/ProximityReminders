@@ -9,6 +9,10 @@
 import UIKit
 import CoreLocation
 
+enum NotificationRegionEvent: Int {
+    case None, Enter, Exit
+}
+
 class TaskViewController: UITableViewController {
     
     // MARK: - UI
