@@ -36,4 +36,17 @@ class CircularNotificationRegion: NSManagedObject {
     override func awakeFromInsert() {
         dateCreated = NSDate()
     }
+    
+    class func circularNotificationRegion(coordinate: CLLocationCoordinate2D, radius: Double = 50.0, notifyOnEntry: Bool, notifyOnExit: Bool, inManagedObjectContext moc: NSManagedObjectContext) -> CircularNotificationRegion {
+        
+        let circularNotificationRegion = NSEntityDescription.insertNewObjectForEntityForName(CircularNotificationRegion.entityName, inManagedObjectContext: moc) as! CircularNotificationRegion
+        
+        circularNotificationRegion.latitude = coordinate.latitude
+        circularNotificationRegion.longitude = coordinate.longitude
+        circularNotificationRegion.radius = radius
+        circularNotificationRegion.notifyOnEntry = notifyOnEntry
+        circularNotificationRegion.notifyOnExit = notifyOnExit
+        
+        return circularNotificationRegion
+    }
 }
