@@ -14,6 +14,10 @@ class Task: NSManagedObject {
     // TODO: change to 'class' stored property instead of 'static' when supported
     private static let entityName = "\(Task.self)"
     
+    override var description: String {
+        return text
+    }
+    
     override func awakeFromInsert() {
         dateCreated = NSDate()
     }
