@@ -10,4 +10,8 @@ import Foundation
 import CoreData
 
 class CircularNotificationRegion: NSManagedObject {
+    
+    override func awakeFromInsert() {
+        dateCreated = NSDate()
+    }
 }
