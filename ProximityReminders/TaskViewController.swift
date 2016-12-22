@@ -34,7 +34,11 @@ class TaskViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var task: Task?
+    var task: Task? {
+        didSet {
+            configureView()
+        }
+    }
     
     init(task: Task? = nil) {
         
