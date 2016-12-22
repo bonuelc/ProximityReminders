@@ -8,7 +8,12 @@
         <attribute name="notifyOnExit" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="radius" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
+    <entity name="Task" syncable="YES">
+        <attribute name="dateCreated" attributeType="Date" syncable="YES"/>
+        <attribute name="text" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="CircularNotificationRegion" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Task" positionX="-54" positionY="18" width="128" height="75"/>
     </elements>
 </model>
