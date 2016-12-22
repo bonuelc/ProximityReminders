@@ -58,6 +58,16 @@ extension TaskListController {
         
         showDetailViewController(navigationController, sender: sender)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let task = dataSource.taskAtIndexPath(indexPath)
+        let taskVC = TaskViewController(task: task, locationManager: locationManager)
+        
+        let navigationController = UINavigationController(rootViewController: taskVC)
+        
+        showDetailViewController(navigationController, sender: nil)
+    }
 }
 
 // MARK: - Helper Methods
