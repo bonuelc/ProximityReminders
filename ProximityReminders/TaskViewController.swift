@@ -34,6 +34,8 @@ class TaskViewController: UITableViewController {
         
         let segmentedControl = UISegmentedControl(items: ["None", "When I Enter", "When I Exit"])
         
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), forControlEvents: .ValueChanged)
+        
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
         return segmentedControl
@@ -157,5 +159,15 @@ extension TaskViewController {
     
     func updateTaskText() {
         task?.text = textField.text!
+    }
+    
+    func segmentedControlValueChanged(sender: UISegmentedControl) {
+        
+        guard let event = NotificationRegionEvent(rawValue: sender.selectedSegmentIndex) else { fatalError() }
+        
+        updateTaskCircularNotificationRegion(notificationRegionEvent: event)
+    }
+    
+    func updateTaskCircularNotificationRegion(notificationRegionEvent event: NotificationRegionEvent) {
     }
 }
