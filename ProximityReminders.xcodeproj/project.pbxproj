@@ -20,6 +20,7 @@
 		85FC71F61E0B3014001C37D6 /* TaskFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC71F51E0B3014001C37D6 /* TaskFetchedResultsController.swift */; };
 		85FC71F81E0B31F2001C37D6 /* TaskDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC71F71E0B31F2001C37D6 /* TaskDataSource.swift */; };
 		85FC71FC1E0B38B3001C37D6 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC71FB1E0B38B3001C37D6 /* TaskViewController.swift */; };
+		85FC71FF1E0B6732001C37D6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC71FE1E0B6732001C37D6 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		85FC71F51E0B3014001C37D6 /* TaskFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskFetchedResultsController.swift; sourceTree = "<group>"; };
 		85FC71F71E0B31F2001C37D6 /* TaskDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataSource.swift; sourceTree = "<group>"; };
 		85FC71FB1E0B38B3001C37D6 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		85FC71FE1E0B6732001C37D6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		85779EE01E0CD57200F75178 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85FC71FE1E0B6732001C37D6 /* LocationManager.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		85FC2ED11E09A376009C88B8 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 				85141F6E1E0B07AA00DB3920 /* Model */,
 				85141F701E0B07DB00DB3920 /* View */,
 				85141F711E0B082600DB3920 /* Controller */,
+				85779EE01E0CD57200F75178 /* Helpers */,
 				85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */,
 				85FC2EEC1E09A376009C88B8 /* Info.plist */,
 			);
@@ -190,6 +201,7 @@
 				85FC2F281E09E5F1009C88B8 /* Task+CoreDataProperties.swift in Sources */,
 				85FC2F2A1E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift in Sources */,
 				85FC2F291E09E5F1009C88B8 /* Task.swift in Sources */,
+				85FC71FF1E0B6732001C37D6 /* LocationManager.swift in Sources */,
 				85FC2F2B1E09E5F1009C88B8 /* CircularNotificationRegion.swift in Sources */,
 				85FC71FC1E0B38B3001C37D6 /* TaskViewController.swift in Sources */,
 				85FC2EDE1E09A376009C88B8 /* AppDelegate.swift in Sources */,
