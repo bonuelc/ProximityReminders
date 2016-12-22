@@ -32,6 +32,10 @@ class TaskViewController: UITableViewController {
         return segmentedControl
     }()
     
+    // MARK: - Properties
+    
+    var task: Task?
+    
     // MARK: - UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
