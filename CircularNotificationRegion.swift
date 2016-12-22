@@ -20,6 +20,16 @@ class CircularNotificationRegion: NSManagedObject {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
+    var toCLRegion: CLRegion {
+        
+        let region = CLCircularRegion(center: center, radius: radius, identifier: identifier)
+        
+        region.notifyOnEntry = notifyOnEntry
+        region.notifyOnExit = notifyOnExit
+        
+        return region
+    }
+    
     override func awakeFromInsert() {
         dateCreated = NSDate()
     }
