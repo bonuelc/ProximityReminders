@@ -47,6 +47,10 @@ class TaskViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        configureView()
+    }
+    
     // MARK: - UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -102,5 +106,22 @@ class TaskViewController: UITableViewController {
         ])
         
         return cell
+    }
+}
+
+// MARK: - Helper Methods
+
+extension TaskViewController {
+    
+    func configureView() {
+        
+        if let task = task {
+            textField.text = task.text
+            // TODO: set segmentedControl.selectedSegmentIndex
+        } else {
+            // reset all
+            textField.text = ""
+            segmentedControl.selectedSegmentIndex = 0
+        }
     }
 }
