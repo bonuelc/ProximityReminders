@@ -12,6 +12,9 @@ import CoreLocation
 
 class CircularNotificationRegion: NSManagedObject {
     
+    // TODO: change to 'class' stored property instead of 'static' when supported
+    private static let entityName = "\(CircularNotificationRegion.self)"
+    
     var identifier: String {
         return dateCreated.description
     }
