@@ -10,6 +10,16 @@ import UIKit
 import CoreLocation
 
 class LocationManager: CLLocationManager {
+    
+    // MARK: - Properties
+    
+    let geocoder = CLGeocoder()
+    
+    var onLocationFix: ((CLPlacemark?, NSError?) -> Void)? {
+        didSet {
+            requestLocation()
+        }
+    }
 
     override init() {
         super.init()
@@ -33,6 +43,18 @@ extension LocationManager: CLLocationManagerDelegate {
         
         if status == .AuthorizedAlways {
             requestLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.first else { return }
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            
+            if let onLocationFix = self.onLocationFix {
+                onLocationFix(placemarks?.first, error)
+            }
         }
     }
 }
