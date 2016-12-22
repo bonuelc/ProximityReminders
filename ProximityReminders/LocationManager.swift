@@ -57,4 +57,8 @@ extension LocationManager: CLLocationManagerDelegate {
             }
         }
     }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Location Manager failed with the following error: \(error.localizedDescription)")
+    }
 }
