@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class TaskViewController: UITableViewController {
     
@@ -34,15 +35,19 @@ class TaskViewController: UITableViewController {
     
     // MARK: - Properties
     
+    let locationManager: LocationManager
+    
     var task: Task? {
         didSet {
             configureView()
         }
     }
     
-    init(task: Task? = nil) {
+    init(task: Task? = nil, locationManager: LocationManager) {
         
         self.task = task
+        
+        self.locationManager = locationManager
         
         super.init(nibName: nil, bundle: nil)
     }
