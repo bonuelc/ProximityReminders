@@ -49,6 +49,8 @@ class TaskViewController: UITableViewController {
     
     override func viewDidLoad() {
         configureView()
+        
+        tableView.scrollEnabled = false
     }
     
     // MARK: - UITableViewDataSource
