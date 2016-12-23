@@ -18,6 +18,15 @@ class Task: NSManagedObject {
         return text
     }
     
+    var notificationRegionEvent: NotificationRegionEvent {
+        
+        if let circularNotificationRegion = circularNotificationRegion {
+            return circularNotificationRegion.notifyOnEntry ? .Enter : .Exit
+        }
+        
+        return .None
+    }
+    
     override func awakeFromInsert() {
         text = ""
         dateCreated = NSDate()
