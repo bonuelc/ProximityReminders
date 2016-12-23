@@ -104,6 +104,8 @@ extension TaskListController {
     
     func setUpBarButtonItems() {
         
+        navigationItem.leftBarButtonItem = editButtonItem()
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(showTaskViewController(_:)))
         navigationItem.rightBarButtonItem = addButton
     }

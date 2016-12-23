@@ -49,6 +49,13 @@ class TaskDataSource: NSObject, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            deleteTaskAtIndexPath(indexPath)
+        }
+    }
 }
 
 // MARK: - Helper Methods
@@ -57,5 +64,14 @@ extension TaskDataSource {
     
     func taskAtIndexPath(indexPath: NSIndexPath) -> Task {
         return fetchedResultsController.objectAtIndexPath(indexPath) as! Task
+    }
+    
+    func deleteTaskAtIndexPath(indexPath: NSIndexPath) -> Task {
+        
+        let task = taskAtIndexPath(indexPath)
+        
+        fetchedResultsController.managedObjectContext.deleteObject(task)
+        
+        return task
     }
 }
