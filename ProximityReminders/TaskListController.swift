@@ -16,6 +16,10 @@ class TaskListController: UITableViewController {
     
     private let managedObjectContext: NSManagedObjectContext
     
+    lazy var locationManager: LocationManager = {
+        return LocationManager()
+    }()
+    
     lazy var dataSource: TaskDataSource = {
         return TaskDataSource(tableView: self.tableView, fetchRequest: Task.allTasks, managedObjectContext: self.managedObjectContext)
     }()
