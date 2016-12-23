@@ -153,7 +153,7 @@ extension TaskViewController {
         
         if let task = task {
             textField.text = task.text
-            // TODO: set segmentedControl.selectedSegmentIndex
+            segmentedControl.selectedSegmentIndex = self.task?.notificationRegionEvent.rawValue ?? 0
         } else {
             // reset all
             textField.text = ""
