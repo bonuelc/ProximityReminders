@@ -51,6 +51,7 @@ class TaskViewController: UITableViewController {
         configureView()
         
         tableView.scrollEnabled = false
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
     
     // MARK: - UITableViewDataSource
