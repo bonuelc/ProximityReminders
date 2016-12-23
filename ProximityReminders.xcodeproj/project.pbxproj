@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		85141F731E0B085F00DB3920 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85141F721E0B085F00DB3920 /* TaskListController.swift */; };
+		85779EE21E0CD5BB00F75178 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85779EE11E0CD5BB00F75178 /* Utilities.swift */; };
 		85FC2EDE1E09A376009C88B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */; };
 		85FC2EE61E09A376009C88B8 /* ProximityReminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85FC2EE41E09A376009C88B8 /* ProximityReminders.xcdatamodeld */; };
 		85FC2EE81E09A376009C88B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85FC2EE71E09A376009C88B8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		85141F721E0B085F00DB3920 /* TaskListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
+		85779EE11E0CD5BB00F75178 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		85FC2EDA1E09A376009C88B8 /* ProximityReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85FC2EDD1E09A376009C88B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85FC2EE51E09A376009C88B8 /* ProximityReminders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProximityReminders.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				85FC71FE1E0B6732001C37D6 /* LocationManager.swift */,
+				85779EE11E0CD5BB00F75178 /* Utilities.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				85141F731E0B085F00DB3920 /* TaskListController.swift in Sources */,
 				85FC71F61E0B3014001C37D6 /* TaskFetchedResultsController.swift in Sources */,
 				85FC71F81E0B31F2001C37D6 /* TaskDataSource.swift in Sources */,
+				85779EE21E0CD5BB00F75178 /* Utilities.swift in Sources */,
 				85FC2F131E09E0AF009C88B8 /* CoreDataController.swift in Sources */,
 				85FC2F281E09E5F1009C88B8 /* Task+CoreDataProperties.swift in Sources */,
 				85FC2F2A1E09E5F1009C88B8 /* CircularNotificationRegion+CoreDataProperties.swift in Sources */,
