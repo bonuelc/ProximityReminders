@@ -25,7 +25,7 @@ class CircularNotificationRegion: NSManagedObject {
     
     var toCLRegion: CLRegion {
         
-        let region = CLCircularRegion(center: center, radius: radius, identifier: identifier)
+        let region = CLCircularRegion(center: center, radius: radius, identifier: task.description)
         
         region.notifyOnEntry = notifyOnEntry
         region.notifyOnExit = notifyOnExit
