@@ -62,11 +62,36 @@ extension LocationManager: CLLocationManagerDelegate {
         }
     }
     
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        notifyUser(ofRegion: region)
+    }
+    
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        notifyUser(ofRegion: region)
+    }
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Location Manager failed with the following error: \(error.localizedDescription)")
     }
     
     func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
         print("Monitoring failed for region with identifier: \(region!.identifier)")
+    }
+}
+
+// MARK: - Helper Methods
+
+extension LocationManager {
+    
+    func notifyUser(ofRegion region: CLRegion) {
+
+        if UIApplication.sharedApplication().applicationState == .Active {
+            presentingViewController.showAlert(withTitle: nil, andMessage: region.identifier)
+        } else {
+            let notification = UILocalNotification()
+            notification.alertBody = region.identifier
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
     }
 }
