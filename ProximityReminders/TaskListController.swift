@@ -26,7 +26,12 @@ class TaskListController: UITableViewController {
     }()
     
     lazy var dataSource: TaskDataSource = {
-        return TaskDataSource(tableView: self.tableView, fetchRequest: Task.allTasks, managedObjectContext: self.managedObjectContext)
+        
+        let dataSource = TaskDataSource(tableView: self.tableView, fetchRequest: Task.allTasks, managedObjectContext: self.managedObjectContext)
+        
+        dataSource.delegate = self
+        
+        return dataSource
     }()
     
     init(managedObjectContext: NSManagedObjectContext) {

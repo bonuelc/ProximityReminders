@@ -16,6 +16,7 @@ class TaskDataSource: NSObject, UITableViewDataSource {
     
     private let tableView: UITableView
     private let fetchedResultsController: TaskFetchedResultsController
+    var delegate: LocationMonitoringDelegate?
     
     init(tableView: UITableView, fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext) {
         
@@ -69,6 +70,8 @@ extension TaskDataSource {
     func deleteTaskAtIndexPath(indexPath: NSIndexPath) -> Task {
         
         let task = taskAtIndexPath(indexPath)
+        
+        delegate?.stopMonitoring(task.circularNotificationRegion)
         
         fetchedResultsController.managedObjectContext.deleteObject(task)
         
