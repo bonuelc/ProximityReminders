@@ -22,7 +22,7 @@ class TaskListController: UITableViewController {
     private let managedObjectContext: NSManagedObjectContext
     
     lazy var locationManager: LocationManager = {
-        return LocationManager()
+        return LocationManager(presentingViewController: self)
     }()
     
     lazy var dataSource: TaskDataSource = {

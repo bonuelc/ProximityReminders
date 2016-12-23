@@ -14,6 +14,7 @@ class LocationManager: CLLocationManager {
     // MARK: - Properties
     
     let geocoder = CLGeocoder()
+    let presentingViewController: UIViewController
     
     var onLocationFix: ((CLPlacemark?, NSError?) -> Void)? {
         didSet {
@@ -21,7 +22,10 @@ class LocationManager: CLLocationManager {
         }
     }
 
-    override init() {
+    init(presentingViewController: UIViewController) {
+        
+        self.presentingViewController = presentingViewController
+        
         super.init()
         
         self.delegate = self
