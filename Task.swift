@@ -36,6 +36,11 @@ class Task: NSManagedObject {
         return NSEntityDescription.insertNewObjectForEntityForName(Task.entityName, inManagedObjectContext: moc) as! Task
     }
     
+    func deleteCircularNotificationRegion(inManagedObjectContext moc: NSManagedObjectContext) {
+        guard let region = circularNotificationRegion else { return }
+        moc.deleteObject(region)
+    }
+    
     // TODO: change to 'class' stored property instead of 'static' when supported
     static let allTasks: NSFetchRequest = {
         let request = NSFetchRequest(entityName: Task.entityName)
