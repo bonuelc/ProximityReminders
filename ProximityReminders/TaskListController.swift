@@ -52,7 +52,7 @@ extension TaskListController {
             
         let newTask = Task.task(inManagedObjectContext: managedObjectContext)
         
-        let taskVC = TaskViewController(task: newTask, locationManager: locationManager)
+        let taskVC = TaskViewController(task: newTask, locationManager: locationManager, managedObjectContext: managedObjectContext)
         
         let navigationController = UINavigationController(rootViewController: taskVC)
         
@@ -62,7 +62,7 @@ extension TaskListController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let task = dataSource.taskAtIndexPath(indexPath)
-        let taskVC = TaskViewController(task: task, locationManager: locationManager)
+        let taskVC = TaskViewController(task: task, locationManager: locationManager, managedObjectContext: managedObjectContext)
         
         let navigationController = UINavigationController(rootViewController: taskVC)
         

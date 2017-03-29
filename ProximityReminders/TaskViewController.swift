@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import CoreLocation
 
 enum NotificationRegionEvent: Int {
@@ -44,6 +45,7 @@ class TaskViewController: UITableViewController {
     // MARK: - Properties
     
     let locationManager: LocationManager
+    let managedObjectContext: NSManagedObjectContext
     
     var task: Task? {
         didSet {
@@ -51,11 +53,13 @@ class TaskViewController: UITableViewController {
         }
     }
     
-    init(task: Task? = nil, locationManager: LocationManager) {
+    init(task: Task? = nil, locationManager: LocationManager, managedObjectContext: NSManagedObjectContext) {
         
         self.task = task
         
         self.locationManager = locationManager
+        
+        self.managedObjectContext = managedObjectContext
         
         super.init(nibName: nil, bundle: nil)
     }
