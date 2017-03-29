@@ -59,6 +59,9 @@ class TaskViewController: UITableViewController {
     override func viewDidLoad() {
         configureView()
         
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
+        
         tableView.scrollEnabled = false
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
