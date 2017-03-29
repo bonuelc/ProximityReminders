@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 class Task: NSManagedObject {
     
@@ -34,6 +35,15 @@ class Task: NSManagedObject {
     
     class func task(inManagedObjectContext moc: NSManagedObjectContext) -> Task {
         return NSEntityDescription.insertNewObjectForEntityForName(Task.entityName, inManagedObjectContext: moc) as! Task
+    }
+    
+    func setRegion(coordinate: CLLocationCoordinate2D, radius: Double = 50.0, notifyOnEntry: Bool, notifyOnExit: Bool, inManagedObjectContext moc: NSManagedObjectContext) {
+        
+        let circularNotificationRegion = CircularNotificationRegion.circularNotificationRegion(coordinate, notifyOnEntry: notifyOnEntry, notifyOnExit: notifyOnExit, inManagedObjectContext: managedObjectContext!)
+        
+        circularNotificationRegion.task = self
+        
+        self.circularNotificationRegion = circularNotificationRegion
     }
     
     func deleteCircularNotificationRegion(inManagedObjectContext moc: NSManagedObjectContext) {

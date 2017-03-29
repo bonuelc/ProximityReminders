@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import CoreData
 
+protocol LocationMonitoringDelegate {
+    func startMonitoring(region: CircularNotificationRegion?)
+    func stopMonitoring(region: CircularNotificationRegion?)
+}
+
 class TaskListController: UITableViewController {
     
     // MARK: Properties
@@ -49,10 +54,12 @@ extension TaskListController {
     func showTaskViewController(sender: AnyObject?) {
         
         guard sender is UIBarButtonItem else { return }
-            
+        
         let newTask = Task.task(inManagedObjectContext: managedObjectContext)
         
         let taskVC = TaskViewController(task: newTask, locationManager: locationManager, managedObjectContext: managedObjectContext)
+        
+        taskVC.delegate = self
         
         let navigationController = UINavigationController(rootViewController: taskVC)
         
@@ -64,9 +71,30 @@ extension TaskListController {
         let task = dataSource.taskAtIndexPath(indexPath)
         let taskVC = TaskViewController(task: task, locationManager: locationManager, managedObjectContext: managedObjectContext)
         
+        taskVC.delegate = self
+        
         let navigationController = UINavigationController(rootViewController: taskVC)
         
         showDetailViewController(navigationController, sender: nil)
+    }
+}
+
+// MARK: - LocationMonitoringDelegate
+
+extension TaskListController: LocationMonitoringDelegate {
+    
+    func startMonitoring(region: CircularNotificationRegion?) {
+        
+        guard let region = region?.toCLRegion else { return }
+        
+        locationManager.startMonitoringForRegion(region)
+    }
+    
+    func stopMonitoring(region: CircularNotificationRegion?) {
+        
+        guard let region = region?.toCLRegion else { return }
+        
+        locationManager.stopMonitoringForRegion(region)
     }
 }
 

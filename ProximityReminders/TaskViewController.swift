@@ -46,6 +46,7 @@ class TaskViewController: UITableViewController {
     
     let locationManager: LocationManager
     let managedObjectContext: NSManagedObjectContext
+    var delegate: LocationMonitoringDelegate?
     
     var task: Task? {
         didSet {
@@ -173,5 +174,28 @@ extension TaskViewController {
     }
     
     func updateTaskCircularNotificationRegion(notificationRegionEvent event: NotificationRegionEvent) {
+        
+        delegate?.stopMonitoring(task?.circularNotificationRegion)
+        task?.deleteCircularNotificationRegion(inManagedObjectContext: managedObjectContext)
+        
+        switch event {
+        case .None: break
+        case .Enter, .Exit:
+            
+            segmentedControl.enabled = false
+            
+            locationManager.onLocationFix = { placemark, error in
+                
+                self.segmentedControl.enabled = true
+                
+                guard let location = placemark?.location else {
+                    return
+                }
+                
+                self.task?.setRegion(location.coordinate, notifyOnEntry: event == .Enter, notifyOnExit: event == .Exit, inManagedObjectContext: self.managedObjectContext)
+                
+                self.delegate?.startMonitoring(self.task?.circularNotificationRegion)
+            }
+        }
     }
 }
