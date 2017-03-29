@@ -19,6 +19,7 @@ class Task: NSManagedObject {
     }
     
     override func awakeFromInsert() {
+        text = ""
         dateCreated = NSDate()
     }
     
