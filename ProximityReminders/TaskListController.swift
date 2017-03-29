@@ -37,5 +37,26 @@ class TaskListController: UITableViewController {
     
     override func viewDidLoad() {
         tableView.dataSource = dataSource
+        
+        setUpBarButtonItems()
+    }
+}
+
+// MARK: - Navigation
+
+extension TaskListController {
+    
+    func showTaskViewController(sender: AnyObject?) {
+    }
+}
+
+// MARK: - Helper Methods
+
+extension TaskListController {
+    
+    func setUpBarButtonItems() {
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(showTaskViewController(_:)))
+        navigationItem.rightBarButtonItem = addButton
     }
 }
