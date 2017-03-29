@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -30,6 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         
         return true
+    }
+    
+    // MARK: - Split view
+    
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+        
+        // Return true to indicate that we have handled the collapse by doing nothing; the detailVC will be discarded.
+        
+        guard let detailNavController = secondaryViewController as? UINavigationController else { return false }
+        
+        guard let detailVC = detailNavController.topViewController as? TaskViewController else { return false }
+        
+        return detailVC.task == nil
     }
 }
 
