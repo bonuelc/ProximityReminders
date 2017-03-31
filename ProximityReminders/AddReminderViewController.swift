@@ -28,6 +28,9 @@ class AddReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
+        
         view.backgroundColor = .whiteColor()
     }
     
