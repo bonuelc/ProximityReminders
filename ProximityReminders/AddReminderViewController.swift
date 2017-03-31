@@ -25,6 +25,10 @@ class AddReminderViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Properties
+    
+    var delegate: TaskListController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

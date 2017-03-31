@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterNavigationControler = UINavigationController(rootViewController: masterViewController)
         
         let detailViewController = AddReminderViewController()
+        detailViewController.delegate = masterViewController
         let detailNavigationController = UINavigationController(rootViewController: detailViewController)
         
         let splitVC = UISplitViewController()
