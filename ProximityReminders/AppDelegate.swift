@@ -29,8 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterViewController = TaskListController(managedObjectContext: CoreDataController().managedObjectContext)
         let masterNavigationControler = UINavigationController(rootViewController: masterViewController)
         
+        let detailViewController = AddReminderViewController()
+        let detailNavigationController = UINavigationController(rootViewController: detailViewController)
+        
         let splitVC = UISplitViewController()
-        splitVC.viewControllers = [masterNavigationControler]
+        splitVC.viewControllers = [masterNavigationControler, detailNavigationController]
         
         window.rootViewController = splitVC
         window.makeKeyAndVisible()
