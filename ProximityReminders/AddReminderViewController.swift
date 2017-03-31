@@ -22,6 +22,8 @@ class AddReminderViewController: UIViewController {
         
         button.setTitle("Add a new reminder", forState: .Normal)
         
+        button.addTarget(self, action: #selector(presentNewTaskViewController), forControlEvents: .TouchUpInside)
+        
         return button
     }()
     
@@ -48,5 +50,9 @@ class AddReminderViewController: UIViewController {
             addButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
             addButton.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
         ])
+    }
+    
+    @objc func presentNewTaskViewController() {
+        delegate?.showTaskViewController(self)
     }
 }

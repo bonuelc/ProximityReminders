@@ -58,8 +58,6 @@ extension TaskListController {
     
     func showTaskViewController(sender: AnyObject?) {
         
-        guard sender is UIBarButtonItem else { return }
-        
         let newTask = Task.task(inManagedObjectContext: managedObjectContext)
         
         let taskVC = TaskViewController(task: newTask, locationManager: locationManager, managedObjectContext: managedObjectContext)
