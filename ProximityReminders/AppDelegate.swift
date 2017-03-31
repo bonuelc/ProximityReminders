@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let detailNavigationController = UINavigationController(rootViewController: detailViewController)
         
         let splitVC = UISplitViewController()
+        splitVC.delegate = self
         splitVC.viewControllers = [masterNavigationControler, detailNavigationController]
         
         window.rootViewController = splitVC
@@ -50,9 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         guard let detailNavController = secondaryViewController as? UINavigationController else { return false }
         
-        guard let detailVC = detailNavController.topViewController as? TaskViewController else { return false }
-        
-        return detailVC.task == nil
+        return detailNavController.topViewController is AddReminderViewController
     }
 }
 
