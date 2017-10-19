@@ -1,5 +1,7 @@
 # ProximityReminders
 
+Treehouse iOS Techdegree Project #11
+
 Do you ever forget to take your keys when you leave the house? Or how about reminding yourself to pick up milk when close to the grocery store? You are in luck, because you now have all the skills to develop such an app. Your challenge is to develop a proximity reminder app which can remind you when you are close to a location or leaving a location.
 
 You will need to use Core Data to save the reminders, Core Location for geo-fencing, and notifications for the reminder. A geo-fence is a virtual perimeter around a geographic area. The app should closely resemble the stock Reminders app in iOS.
